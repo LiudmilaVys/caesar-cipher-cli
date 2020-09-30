@@ -33,5 +33,6 @@ function logErrorMessage(text) {
 }
 
 module.exports = {
-  validateAction
+  validateAction,
+  validateShift
 };
