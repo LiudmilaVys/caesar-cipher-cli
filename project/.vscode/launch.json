@@ -12,7 +12,7 @@
                 "<node_internals>/**"
             ],
             "program": "${workspaceFolder}\\src\\caesar-cipher-cli.js",
-            "args": ["--action", "encode", "--shift", "7", "--input", "plain.txt", "--output", "output.txt"]
+            "args": ["--action", "encode", "--shift", "1", "--input", "plain.txt"]
         }
     ]
 }

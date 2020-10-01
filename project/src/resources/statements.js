@@ -1,8 +1,8 @@
-const actions = Object.freeze({
-  encode: Symbol('encode'),
-  decode: Symbol('decode')
+const action = Object.freeze({
+  encode: 'encode',
+  decode: 'decode'
 });
 
 module.exports = {
-  actions
+  action
 };
