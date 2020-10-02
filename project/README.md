@@ -1,4 +1,4 @@
-# Caesar Encoding Tool
+# Caesar Cipher Encoding Tool
 
 ## Params
 
@@ -18,11 +18,11 @@ node caesar-cipher-cli -a encode -s 5
 The case where input and output files are declared.
 
 ```
-node caesar-cipher-cli-a encode -s 7 -i "./input.txt" -o "./output.txt"
+node caesar-cipher-cli -a encode -s 7 -i "./input.txt" -o "./output.txt"
 ```
 
 Example with fullnamed parameters.
 
 ```
-node caesar-cipher-cli--action encode --shift 7 --input plain.txt --output encoded.txt
+node caesar-cipher-cli --action encode --shift 7 --input plain.txt --output encoded.txt
 ```
