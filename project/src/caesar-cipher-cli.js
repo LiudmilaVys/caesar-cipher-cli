@@ -32,11 +32,11 @@ if (
 validator.validateAction(argv.action);
 validator.validateShift(argv.shift);
 if (argv.input) {
-  inputPath = path.join(__dirname, "..", argv.input);
+  inputPath = resolveFilePath(argv.input);
   validator.validateInput(inputPath);
 }
 if (argv.output) {
-  outputPath = path.join(__dirname, "..", argv.output);
+  outputPath = resolveFilePath(argv.output);
   validator.validateOutput(outputPath);
 }
 
@@ -88,4 +88,12 @@ function processStreams(inputStream, outputStream) {
       logger.logErrorMessage(messages.generalError);
     }
   });
+}
+
+function resolveFilePath(filePath){
+  if (path.isAbsolute(filePath)){
+    return filePath;
+  } else{
+    return path.join(__dirname, filePath);
+  }
 }
