@@ -40,6 +40,8 @@ if (argv.output) {
   validator.validateOutput(outputPath);
 }
 
+const outputStream = defineOutputStream(outputPath);
+
 if (inputPath) {
   //read from file
   const inputStream = fs.createReadStream(inputPath);
@@ -49,16 +51,15 @@ if (inputPath) {
     process.exit(0);
   });
 
-  processStreams(inputStream, defineOutputStream(outputPath));
+  processStreams(inputStream, outputStream);
 } else {
   //read from command line
   logger.logNotification(messages.inputFileAbsent);
 
   const rl = readline.createInterface({ input: process.stdin });
-
   rl.on("line", (line) => {
     const lineStream = Readable.from([line]);
-    processStreams(lineStream, defineOutputStream(outputPath));
+    processStreams(lineStream, outputStream);
   });
 }
 
