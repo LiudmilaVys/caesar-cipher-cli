@@ -18,6 +18,16 @@ const argv = minimist(process.argv, {
   alias: { a: "action", s: "shift", i: "input", o: "output" },
 });
 
+if (
+  Array.isArray(argv.action) ||
+  Array.isArray(argv.shift) ||
+  Array.isArray(argv.input) ||
+  Array.isArray(argv.output)
+) {
+  logger.logErrorMessage(messages.duplicatedParams);
+  process.exit(9);
+}
+
 // validate args
 validator.validateAction(argv.action);
 validator.validateShift(argv.shift);

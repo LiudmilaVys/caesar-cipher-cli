@@ -1,4 +1,5 @@
 module.exports = {
+    duplicatedParams: 'Duplicated params are found. Params must be unique.',
     actionIsAbsent: 'Action parameter is required.',
     actionIsInvalid: 'Action parameter is invalid.',
     shiftIsAbsent: 'Shift parameter is required.',
